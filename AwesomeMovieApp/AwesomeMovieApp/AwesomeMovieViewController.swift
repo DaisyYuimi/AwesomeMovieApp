@@ -35,6 +35,8 @@ class AwesomeMovieViewController: UIViewController {
         self.tableView.delegate = self
         
         loadDataFromServer()
+        
+        print("test push")
     }
     
     func configureSearchController() {
