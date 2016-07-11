@@ -8,7 +8,7 @@
 
 import UIKit
 import AFNetworking
-
+import MBProgressHUD
 
 class AwesomeMovieViewController: UIViewController {
 
@@ -18,10 +18,19 @@ class AwesomeMovieViewController: UIViewController {
     var shouldShowSearchResults = false
     var searchController: UISearchController!
     var endPoint: String!
+    var hud: MBProgressHUD = MBProgressHUD()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection available")
+        } else {
+            print("Internet connection FAILED")
+            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
         
         self.definesPresentationContext = true
         
@@ -33,22 +42,22 @@ class AwesomeMovieViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
+       
         loadDataFromServer()
-        
-        print("test push")
     }
     
+  
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search here..."
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
         
         // Place the search bar view to the tableview headerview.
-        tableView.tableHeaderView = searchController.searchBar
+        navigationItem.titleView = searchController.searchBar
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,8 +99,6 @@ extension AwesomeMovieViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
-        
-        
         let movie = shouldShowSearchResults ? filteredMovies[indexPath.row] : movies[indexPath.row]
         let movieModel = MovieModel.parseData(movie)
         
@@ -106,6 +113,7 @@ extension AwesomeMovieViewController: UITableViewDelegate, UITableViewDataSource
         if let posterPath = movie["poster_path"] as? String {
             let imageUrl = NSURL(string: baseUrl + posterPath)
             cell.posterView.setImageWithURL(imageUrl!)
+            
         }
         
         return cell
@@ -145,6 +153,8 @@ extension AwesomeMovieViewController {
                                                                         }
         })
         task.resume()
+        
+        
     }
     
     

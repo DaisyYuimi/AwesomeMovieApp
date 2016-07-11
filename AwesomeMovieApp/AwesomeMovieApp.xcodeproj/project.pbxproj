@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E48F49511D337CD400255CD6 /* ReachabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48F49501D337CD400255CD6 /* ReachabilityViewController.swift */; };
 		E4D431521D3013B90049C940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D431511D3013B90049C940 /* AppDelegate.swift */; };
 		E4D431571D3013B90049C940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D431551D3013B90049C940 /* Main.storyboard */; };
 		E4D431591D3013B90049C940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D431581D3013B90049C940 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		8D859295FB974A9E9D202B62 /* Pods_AwesomeMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeMovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28D0E2C88A54DBC935EDB55 /* Pods-AwesomeMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeMovieApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeMovieApp/Pods-AwesomeMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E48F49501D337CD400255CD6 /* ReachabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityViewController.swift; sourceTree = "<group>"; };
 		E4D4314E1D3013B90049C940 /* AwesomeMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D431511D3013B90049C940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4D431561D3013B90049C940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				E4D4315A1D3013B90049C940 /* LaunchScreen.storyboard */,
 				E4D4315D1D3013B90049C940 /* Info.plist */,
 				E4E2E7341D30EAFF00C956A2 /* MovieModel.swift */,
+				E48F49501D337CD400255CD6 /* ReachabilityViewController.swift */,
 			);
 			path = AwesomeMovieApp;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				E4D431641D3013FA0049C940 /* AwesomeMovieViewController.swift in Sources */,
 				E4D431521D3013B90049C940 /* AppDelegate.swift in Sources */,
+				E48F49511D337CD400255CD6 /* ReachabilityViewController.swift in Sources */,
 				E4E2E7351D30EAFF00C956A2 /* MovieModel.swift in Sources */,
 				E4D431661D30209C0049C940 /* MovieCell.swift in Sources */,
 				E4D431681D3028030049C940 /* DetailsViewController.swift in Sources */,
